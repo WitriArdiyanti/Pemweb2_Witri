@@ -38,7 +38,7 @@
         <label for="radio_1" class="custom-control-label">Kulkas</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input name="produk" id="radio_2" type="radio" class="custom-control-input" value="mesin_cuci"> 
+        <input name="produk" id="radio_2" type="radio" class="custom-control-input" value="mesin cuci"> 
         <label for="radio_2" class="custom-control-label">Mesin Cuci</label>
       </div>
     </div>
@@ -74,28 +74,28 @@
                     </div>
                 </div>
 			</div>
-            <div class="m-4">
+          <div class="m-4">
             <?php
-           
-            $customer = $_POST['customer'];
-            $produk = $_POST['produk'];
-            $jumlah = $_POST['jumlah'];
-
-            if ($produk == 'tv') {
-                $harga = $jumlah * 4200000;
-            } elseif ($produk == 'kulkas') {
-                $harga = $jumlah * 3100000;
-            } elseif ($produk == 'mesin_cuci') {
-                $harga = $jumlah * 3800000;
-            } 
             
-            echo '<br/>Nama Customer : ' .$customer;
-            echo '<br/>Produk Pilihan : ' .$produk;
-            echo '<br/>Jumlah Beli : ' .$jumlah;
-            echo '<br/>Total Belanja : ' .$harga;
-        ?>
+                $customer = isset($_POST['customer']) ? $_POST['customer'] : '';
+                $produk = isset($_POST['produk']) ? $_POST['produk'] : '';
+                $jumlah = isset($_POST['jumlah']) ? $_POST['jumlah'] : '';
 
-            </div>
+                if ($produk == 'tv') {
+                    $harga = $jumlah * 4200000;
+                } elseif ($produk == 'kulkas') {
+                    $harga = $jumlah * 3100000;
+                } elseif ($produk == 'mesin cuci') {
+                    $harga = $jumlah * 3800000;
+                } 
+                
+                echo '<br/>Nama Customer : ', $customer;
+                echo '<br/>Produk Pilihan : ', $produk;
+                echo '<br/>Jumlah Beli : ', $jumlah;
+                echo '<br/>Total Belanja : ', $harga;
+            ?>
+
+          </div>
 		</div>
 	</div>
 </div>  
